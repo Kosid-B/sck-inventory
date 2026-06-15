@@ -136,7 +136,7 @@ export default function Dashboard() {
             <BarChart data={categoryStock}>
               <XAxis dataKey="name" />
               <YAxis tickFormatter={(value) => formatCurrency(value)} />
-              <Tooltip formatter={(value: number) => formatCurrency(value)} />
+              <Tooltip formatter={(value) => typeof value === 'number' ? formatCurrency(value) : ''} />
               <Bar dataKey="stockValue" fill="#3b82f6" />
             </BarChart>
           </ResponsiveContainer>
